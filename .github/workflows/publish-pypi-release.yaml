@@ -1,11 +1,10 @@
-name: Publish TestPyPI Release
-run-name: Publish TestPyPI Release
+name: Publish PyPI Release
+run-name: Publish PyPI Release
 
 on:
   push:
     tags:
-      - "testpypi-v*"
-      - "test-v*"
+      - "v*"
   workflow_dispatch:
 
 jobs:
@@ -29,11 +28,11 @@ jobs:
           path: dist/
 
   publish:
-    name: Publish to TestPyPI
+    name: Publish to PyPI
     runs-on: ubuntu-latest
     needs: build
 
-    environment: testpypi
+    environment: pypi
 
     permissions:
       contents: read
@@ -45,7 +44,5 @@ jobs:
         with:
           name: dist
           path: dist/
-      - name: Publish to TestPyPI
+      - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          repository-url: https://test.pypi.org/legacy/

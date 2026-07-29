@@ -3,7 +3,7 @@ requires = ["hatchling >= 1.26"]
 build-backend = "hatchling.build"
 
 [project]
-name = "random_package_python"
+name = "random-python-package"
 version = "0.1.0"
 authors = [
     {name = "HaloMaster6482", email="ingenue-number-6o@icloud.com"}
